@@ -1,0 +1,10 @@
+services:
+  playwright:
+    build: .
+    env_file:
+    - .env  
+    volumes:
+      # Mounts the report folder so it can be accessed locally after the run
+      - ./playwright-report:/app/playwright-report
+    environment:
+      - CI=true
