@@ -75,22 +75,22 @@
 
 
 ## Part 2
-# These are simple call tests. Would add schema validation and other such tests with better access to source material and better understanding of the systems involved.
+* These are simple call tests. Would add schema validation and other such tests with better access to source material and better understanding of the systems involved.
 
 * User B checks their own stored medical data (DOB/Sex).
- 
+ ```
     curl -X GET https://api.ezra.com \
         -H "Authorization: Bearer <USER_B_TOKEN>"
     
     * Response: {"dob": "01-01-1985", "sex": "MALE"}
-
+```
 
 * 
-
+```
     curl -i -X GET https://api.ezra.com \
         -H "Authorization: Bearer <USER_A_ACCESS_TOKEN>" \
         -H "Content-Type: application/json"
-
+```
 ## Part 3
 While security tests _could_ be automated for 100+ endpoints, that many endpoints exposed would represent a rather significant and unusual attack surface from an architectural and security standpoint. 
 
